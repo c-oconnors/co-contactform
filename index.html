@@ -1,68 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Form Modal</title>
-<style>
-  .modal {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 350px;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 20px;
-  }
-  .modal-content {
-    margin: auto;
-    padding: 20px;
-    max-width: 350px;
-  }
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Modal</title>
+    <style>
+        /* Styling for the modal container */
+        .modal {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 350px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .modal-content {
+            margin: auto;
+            padding: 20px;
+            max-width: 350px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Styling for the contact form fields */
+        form {
+            box-sizing: border-box;
+            width: 100%;
+            font-family: "Courier Prime", monospace;
+            -webkit-font-smoothing: antialiased;
+        }
+        label {
+            color: rgb(55, 53, 47);
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 35.2px;
+            margin: 0;
+            padding-bottom: 20px;
+            word-break: break-word;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="submit"] {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgb(55, 53, 47);
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: rgb(55, 53, 47);
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
 
 <div id="myModal" class="modal">
-  <div class="modal-content">
-    <span id="closeModal" class="close">&times;</span>
-    <form action="https://hooks.zapier.com/hooks/catch/15877377/3shbtah/" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Your Name"><br><br>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Your Email"><br><br>
-      <label for="short-answer">Tell us about your project:</label>
-      <input type="text" id="short-answer" name="short_answer" placeholder="Brief project description" required><br><br>
-      <input type="submit" value="Submit">
-    </form>
-  </div>
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <form action="https://hooks.zapier.com/hooks/catch/15877377/3shbtah/" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email"><br><br>
+            <label for="short-answer">Tell us about your project:</label>
+            <input type="text" id="short-answer" name="short_answer" placeholder="Brief project description" required><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </div>
 
 <script>
-  window.addEventListener('hashchange', function() {
-    if(window.location.hash === "#openModal") {
-        document.getElementById('myModal').style.display = 'block';
-    } else {
-        document.getElementById('myModal').style.display = 'none';
-    }
-  });
+    window.addEventListener('hashchange', function() {
+        if(window.location.hash === "#openModal") {
+            document.getElementById('myModal').style.display = 'block';
+        } else {
+            document.getElementById('myModal').style.display = 'none';
+        }
+    });
 
-  document.getElementById('closeModal').addEventListener('click', function() {
-    document.getElementById('myModal').style.display = 'none';
-  });
+    document.getElementById('closeModal').addEventListener('click', function() {
+        document.getElementById('myModal').style.display = 'none';
+    });
 </script>
 
 </body>
